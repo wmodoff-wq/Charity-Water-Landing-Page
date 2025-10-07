@@ -61,7 +61,7 @@ body{
   background:var(--yellow);
 }
 .hero-media{
-  position:absolute;inset:0;background:url('img/hero-well.jpg') center/cover no-repeat;
+  position:absolute;inset:0;background:url('Hero-well.jpg') center/cover no-repeat;
   z-index:-2;
 }
 .hero-overlay{
