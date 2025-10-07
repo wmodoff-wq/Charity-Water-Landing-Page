@@ -1,0 +1,128 @@
+/* Charity: water — College Landing Page */
+/* Palette: yellow #FFC907, navy #003366, light blue #77A8BB, white #FFFFFF */
+:root{
+  --yellow:#FFC907;
+  --navy:#003366;
+  --light:#77A8BB;
+  --white:#FFFFFF;
+  --text:#0f172a; /* slate-900 */
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family: "Proxima Nova","Avenir","Montserrat",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif;
+  color:var(--text);
+  line-height:1.5;
+  background:#fff;
+}
+
+.container{
+  width:min(1100px, 92%);
+  margin-inline:auto;
+}
+
+.skip-link{
+  position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden;
+}
+.skip-link:focus{
+  position:static;width:auto;height:auto;padding:0.5rem 0.75rem;background:var(--yellow);color:#000;display:inline-block;
+}
+
+/* Header */
+.site-header{
+  background:var(--yellow);
+  position:sticky;top:0;z-index:50;
+  border-bottom:3px solid rgba(0,0,0,.1);
+}
+.header-inner{
+  display:flex;align-items:center;gap:1rem;justify-content:space-between;
+  padding:0.85rem 0;
+}
+.primary-nav ul{display:flex;gap:1rem;list-style:none;margin:0;padding:0}
+.primary-nav a{color:#000;text-decoration:none;font-weight:600}
+.primary-nav a:hover{text-decoration:underline}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:0.7rem 1rem;border-radius:999px;border:2px solid transparent;
+  font-weight:700;text-decoration:none;transition:transform .12s ease, box-shadow .2s ease, background .2s ease,color .2s ease;
+}
+.btn:hover{transform:translateY(-1px)}
+.btn:active{transform:translateY(0)}
+.btn-primary{background:#003366;color:#fff;border-color:#003366}
+.btn-primary:hover{box-shadow:0 8px 18px rgba(0,51,102,.25)}
+.btn-secondary{background:#fff;color:#003366;border-color:#003366}
+.btn-outline{background:transparent;border-color:#003366;color:#003366}
+.btn-lg{padding:0.9rem 1.2rem;font-size:1.05rem}
+
+/* Hero */
+.hero{
+  position:relative;isolation:isolate;min-height:72vh;display:grid;place-items:center;
+  background:var(--yellow);
+}
+.hero-media{
+  position:absolute;inset:0;background:url('img/hero-well.jpg') center/cover no-repeat;
+  z-index:-2;
+}
+.hero-overlay{
+  position:absolute;inset:0;background:linear-gradient(to bottom, rgba(0,0,0,.45), rgba(0,0,0,.35));z-index:-1;
+}
+.hero-content{
+  text-align:center;color:#fff;padding:7rem 0 5rem;
+}
+.hero h1{
+  font-weight:800;font-size:clamp(2rem, 5vw, 3.5rem);margin:0 0 .5rem;
+}
+.lead{font-size:clamp(1rem, 2.2vw, 1.25rem);max-width:60ch;margin:0 auto 1.25rem}
+.cta-row{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap}
+.trust-copy{opacity:.9;margin-top:.75rem}
+
+/* Sections */
+.section{padding:3.5rem 0}
+.impact{background:#fff}
+.impact-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:1rem; padding:0; list-style:none; margin:0;
+}
+.impact-item{
+  background:#f8fafc;border:1px solid #e5e7eb;border-radius:16px;padding:1.25rem;
+  text-align:center
+}
+.impact-icon{font-size:1.75rem;margin-bottom:.5rem}
+
+.how{background:linear-gradient(180deg, #f7fbfd, #ffffff)}
+.how h2{text-align:center;margin-top:0;margin-bottom:1.5rem}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.step{background:#ffffff;border:1px solid #e5e7eb;border-radius:16px;padding:1.25rem;text-align:center}
+.step-num{width:36px;height:36px;border-radius:999px;background:var(--light);display:inline-grid;place-items:center;font-weight:800;color:#003366;margin-bottom:.5rem}
+
+.join{background:var(--light);}
+.join-inner{display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:1.25rem}
+.join h2{margin:0 0 .4rem}
+.join-image{width:100%;height:auto;border-radius:16px;box-shadow:0 10px 22px rgba(0,0,0,.12)}
+
+.donate{background:#fff;text-align:center}
+.donate-inner p{margin-top:.25rem}
+
+/* Footer */
+.site-footer{background:#0b1d33;color:#cbd5e1}
+.footer-inner{display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:center;padding:1.25rem 0}
+.footer-brand{display:flex;align-items:center;gap:.5rem;color:#fff;font-weight:700}
+.footer-links{display:flex;gap:1rem;list-style:none;margin:0;padding:0}
+.footer-links a{color:#cbd5e1;text-decoration:none}
+.footer-links a:hover{text-decoration:underline}
+
+/* Responsive */
+@media (max-width: 900px){
+  .impact-grid{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .join-inner{grid-template-columns:1fr}
+}
+@media (max-width: 540px){
+  .impact-grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .primary-nav{display:none}
+  .header-inner{gap:.5rem}
+  .btn{padding:.6rem .9rem}
+}
